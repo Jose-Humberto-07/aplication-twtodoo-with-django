@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Hello Word, Lista de tarefas, será feita nessa aplicação.")
+    return render(request, "todos/home.html")

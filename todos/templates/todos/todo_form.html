@@ -5,13 +5,20 @@
 
 
 {% block page_title %}
-    Lista de Tarefas
+  {% if todo.pk %}
+    Editar Tarefa
+  {% else %}
+    Nova Tarefa
+  {% endif %}
 {% endblock page_title %}
 
 {% block content %}
-
-
-      <h1>Nova Tarefa</h1>
+  {% if todo.pk %}
+    <h1>Editar Tarefa</h1>
+  {% else %}
+    <h1>Nova Tarefa</h1>
+  {% endif %}
+    
 
       <form method="POST">
         {% csrf_token %}

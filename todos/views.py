@@ -45,8 +45,7 @@ class TodoCompleteView(View):
      def get(self, request, pk):
 
           todo = get_object_or_404(Todo, pk=pk)
-          todo.finished_at = date.today()
-          todo.save()
+          todo.mark_has_complete()
           
           return redirect("todo_list")
 
